@@ -9,3 +9,10 @@ FrontEnd will utilize javascript to allow users to view open parking spaces
 
 Key Feature:
  detect different types of vehicles, track parking time, and detect license plates for invoicing
+
+  Depenencies install process:
+  npm init -y //installs node.js modules and creates the json file
+  npm install express body-parser mongoose
+
+  Run application locally for testing:
+   node server.js
