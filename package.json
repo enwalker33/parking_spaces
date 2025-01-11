@@ -1,0 +1,24 @@
+{
+  "name": "parking_spaces",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enwalker33/parking_spaces.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enwalker33/parking_spaces/issues"
+  },
+  "homepage": "https://github.com/enwalker33/parking_spaces#readme",
+  "dependencies": {
+    "browser-sync": "^3.0.3",
+    "express": "^4.21.2"
+  }
+}
