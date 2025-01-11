@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Spaces</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Parking Spaces</h1>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#top">Top</a></li>
+                <li><a href="#available-spots">Availability</a></li>
+
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav> <br>
+    </header>
+    <main>
+        <section class="parking-lot">
+            <h2>Welcome to Parking Spaces</h2>
+            <p>Find and reserve parking spaces easily.</p>
+            <div id="parking-map">
+                <!--dynamic parking lot map/visualization-->
+            </div>
+            <div id="parking-info">
+                <h3> Available Spots: <span id="available-spots" 0></span></h3>
+            </div>
+            <div id="googleMap" style="width:100%;height:400px;"></div>
+
+            <script>
+                function myMap() {
+                    var mapProp = {
+                        center: new google.maps.LatLng(51.508742, -0.120850),
+                        zoom: 5,
+                    };
+                    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                }
+            </script>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We provide a platform to find and reserve parking spaces in your city.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Parking Spaces. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
+<style>
+    .header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        border-style: solid;
+    }
+
+    .nav-bar ul {
+        list-style-type: none;
+        margin: 10;
+        padding: 10;
+        background-color: #333;
+        color: #fff;
+
+    }
+
+    .nav-bar li {
+        float: left;
+        display: inline-flex;
+        padding: 8px;
+    }
+
+    .nav-bar a {
+        display: block;
+        padding: 8px;
+        color: #fff;
+        background-color: #333;
+    }
+
+    .parking-lot {
+        text-align: center;
+    }
+
+    .parking-lot .space {
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .parking-lot .space.occupied {
+        background-color: #ffcccc;
+    }
+
+    .parking-lot .space.available {
+        background-color: #ccffcc;
+    }
+</style>
+<section id="invoice-history">
+    <h3>Invoice History</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dynamic invoice rows will be inserted here -->
+        </tbody>
+    </table>
+</section>
