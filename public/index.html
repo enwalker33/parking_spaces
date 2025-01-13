@@ -16,8 +16,12 @@
             <ul>
                 <li><a href="#top">Top</a></li>
                 <li><a href="#available-spots">Availability</a></li>
+                <li><a href="#my-reservations">Reservations</a></li>
+                <li><a href="#invoice-history">Invoices</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="pages/login.html">Login</a></li>
+                <li><a href="pages/signUp.html">Sing Up</a></li>
             </ul>
         </nav> <br>
     </header>
@@ -25,14 +29,18 @@
         <section class="parking-lot">
             <h2>Welcome to Parking Spaces</h2>
             <p>Find and reserve parking spaces easily.</p>
-            <div id="parking-map">
-                <!--dynamic parking lot map/visualization-->
-            </div>
+           
             <div id="parking-info">
                 <h3> Available Spots: <span id="available-spots" 0></span></h3>
             </div>
+            <div id="parking-map">
+                <!--dynamic parking lot map/visualization-->
             <div id="googleMap" style="width:100%;height:400px;"></div>
             <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+            </div>
+            <div id="parking-info">
+                <h3> My reservations: <span id="my-reservations" 0></span></h3>
+            </div>
         </section>
         <section id="about">
             <h2>About Us</h2>
