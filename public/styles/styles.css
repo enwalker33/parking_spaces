@@ -1,0 +1,48 @@
+.header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-style: solid;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    margin: 10;
+    padding: 10;
+    background-color: #333;
+    color: #fff;
+
+}
+
+.nav-bar li {
+    float: left;
+    display: inline-flex;
+    padding: 8px;
+}
+
+.nav-bar a {
+    display: block;
+    padding: 8px;
+    color: #fff;
+    background-color: #333;
+}
+
+.parking-lot {
+    text-align: center;
+}
+
+.parking-lot .space {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.parking-lot .space.occupied {
+    background-color: #ffcccc;
+}
+
+.parking-lot .space.available {
+    background-color: #ccffcc;
+}
