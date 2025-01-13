@@ -2,7 +2,7 @@
 function myMap() {
     // Set the center of the map (latitude, longitude) and the zoom level
     var mapProp = {
-        center: new google.maps.LatLng(51.508742, -0.120850), // London Eye coordinates as an example
+        center: new google.maps.LatLng(51.508742, -0.120850), // London coordinates as an example
         zoom: 5,
     };
     //Create the map
