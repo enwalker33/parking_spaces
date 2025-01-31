@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parking Spaces</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="js/script.js"></script>
+    
 </head>
 
 <body>
@@ -21,34 +21,45 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="pages/login.html">Login</a></li>
-                <li><a href="pages/signUp.html">Sing Up</a></li>
+                <li><a href="pages/signUp.html">Sign Up</a></li>
             </ul>
-        </nav> <br>
+        </nav>
     </header>
     <main>
-        <section class="parking-lot">
+        <section id="top" class="parking-lot">
             <h2>Welcome to Parking Spaces</h2>
             <p>Find and reserve parking spaces easily.</p>
-           
-            <div id="parking-info">
-                <h3> Available Spots: <span id="available-spots" 0></span></h3>
-            </div>
-            <div id="parking-map">
-                <!--dynamic parking lot map/visualization-->
-            <div id="googleMap" style="width:100%;height:400px;"></div>
-            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
-            </div>
-            <div id="parking-info">
-                <h3> My reservations: <span id="my-reservations" 0></span></h3>
+        </section>
+
+        <section id="available-spots" class="availability">
+            <h2>Available Spots</h2>
+            <div class="spot-list">
+                <!-- List of available spots will be dynamically generated here -->
             </div>
         </section>
-        <section id="about">
+
+        <section id="my-reservations" class="reservations">
+            <h2>My Reservations</h2>
+            <div class="reservation-list">
+                <!-- List of user reservations will be dynamically generated here -->
+            </div>
+        </section>
+
+        <section id="invoice-history" class="invoices">
+            <h2>Invoice History</h2>
+            <div class="invoice-list">
+                <!-- List of invoices will be dynamically generated here -->
+            </div>
+        </section>
+
+        <section id="about" class="about">
             <h2>About Us</h2>
-            <p>We provide a platform to find and reserve parking spaces in your city.</p>
+            <p>Information about the parking spaces application.</p>
         </section>
-        <section id="contact">
+
+        <section id="contact" class="contact">
             <h2>Contact Us</h2>
-            <form>
+            <form class="contact-form">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
@@ -59,25 +70,9 @@
             </form>
         </section>
     </main>
-    <footer>
+    <footer class="footer">
         <p>&copy; 2023 Parking Spaces. All rights reserved.</p>
     </footer>
 </body>
-
+<script src="js/script.js"></script>
 </html>
-
-<section id="invoice-history">
-    <h3>Invoice History</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Amount</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Dynamic invoice rows will be inserted here -->
-        </tbody>
-    </table>
-</section>
