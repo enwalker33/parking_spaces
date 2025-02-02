@@ -46,3 +46,58 @@
 .parking-lot .space.available {
     background-color: #ccffcc;
 }
+/* CSS for Login */
+.login-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .input-group {
+    margin-bottom: 15px;
+  }
+  label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  .show-password {
+    font-size: 12px;
+    cursor: pointer;
+    color: #007BFF;
+  }
+  .form-actions {
+    text-align: center;
+  }
+  .form-actions button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  .forgot-password-link {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #007BFF;
+  }
+  .error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
