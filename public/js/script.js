@@ -43,16 +43,34 @@ document.getElementById('toggle-password').addEventListener('click', function() 
     }
   });
 
-// Close the modal when clicking on <span> (x)
+// Close the login modal when clicking on <span> (x)
 document.querySelector('.close').addEventListener('click', function() {
     document.getElementById("loginModal").style.display = "none";
 });
 
-// Close the modal when clicking outside of it
+// Close the login modal when clicking outside of it
 window.onclick = function(event) {
     if (event.target == document.getElementById("loginModal")) {
         document.getElementById("loginModal").style.display = "none";
     }
 };
+
+//Get signup modal
+function signupModal(){
+    document.getElementById("signupModal").style.display = "block";
+}
+// Close the sign up modal when clicking on <span> (x)
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById("signupModal").style.display = "none";
+});
+ 
+// Close the sign up modal when clicking outside of it
+window.onclick = function(event) {
+    if (event.target == document.getElementById("signupModal")) {
+        document.getElementById("signupModal").style.display = "none";
+    }
+};
+
+
 
 
