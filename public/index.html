@@ -71,9 +71,10 @@
 
     <section class="parking-lot">
         <h2>Welcome to Parking Spaces</h2>
-        <p>Find and reserve parking spaces easily.</p>
+        <p>Find and reserve parking spaces easily.<br>
+            <button class="tab-button" onclick="availableSpots()">Availability</button>        </p>
         <!-- Availability Modal -->
-        <div id="availabilityModal" class="modal">
+        <div id="availableSpots" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h2>Parking Space Availability</h2>
@@ -86,8 +87,10 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section class="user-info">
         <!-- Reservations Modal -->
-        <div id="reservationsModal" class="modal">
+        <div id="reservations" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h2>My Reservations</h2>
@@ -142,30 +145,33 @@
                 </thead>
             </table>
         </section>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We provide a platform to find and reserve parking spaces in your city.</p>
-        </section>
-        <!-- Contact Us Modal -->
-        <div id="contactModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Contact Us</h2>
-                <form>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We provide a platform to find and reserve parking spaces in your city.</p>
+
+    </section>
+    <!-- Contact Us Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
         </div>
+    </div>
     </section>
     <footer>
         <p>&copy; 2023 Parking Spaces. All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
 </body>
+
 </html>

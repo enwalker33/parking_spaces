@@ -44,8 +44,15 @@ document.getElementById('toggle-password').addEventListener('click', function() 
   });
 
 // Close the login modal when clicking on <span> (x)
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById("loginModal").style.display = "none";
+document.querySelectorAll('.close').forEach(function(closeButton) {
+    closeButton.addEventListener('click', function() {
+        document.getElementById("loginModal").style.display = "none";
+        document.getElementById("signupModal").style.display = "none";
+        document.getElementById("availableSpots").style.display = "none";
+        document.getElementById("reservations").style.display = "none";
+        document.getElementById("invoicesModal").style.display = "none";
+        document.getElementById("contactModal").style.display = "none";
+    });
 });
 
 // Close the login modal when clicking outside of it
@@ -53,85 +60,44 @@ window.onclick = function(event) {
     if (event.target == document.getElementById("loginModal")) {
         document.getElementById("loginModal").style.display = "none";
     }
+    if (event.target == document.getElementById("signupModal")) {
+        document.getElementById("signupModal").style.display = "none";
+    }
+    if (event.target == document.getElementById("availableSpots")) {
+        document.getElementById("availableSpots").style.display = "none";
+    }
+    if (event.target == document.getElementById("reservations")) {
+        document.getElementById("reservations").style.display = "none";
+    }
+    if (event.target == document.getElementById("invoicesModal")) {
+        document.getElementById("invoicesModal").style.display = "none";
+    }
+    if (event.target == document.getElementById("contactModal")) {
+        document.getElementById("contactModal").style.display = "none";
+    }
 };
 
 //Get signup modal
 function signupModal(){
     document.getElementById("signupModal").style.display = "block";
 }
-// Close the sign up modal when clicking on <span> (x)
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById("signupModal").style.display = "none";
-});
- 
-// Close the sign up modal when clicking outside of it
-window.onclick = function(event) {
-    if (event.target == document.getElementById("signupModal")) {
-        document.getElementById("signupModal").style.display = "none";
-    }
-};
 
 // GET Available parking spots modal
 function availableSpots(){
     document.getElementById("availableSpots").style.display = "block";
 }
-// Close the available parking spots modal when clicking on <span> (x)
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById("availableSpots").style.display = "none";
-});
+
 //GET Reservations modal
 function reservations(){
     document.getElementById("reservations").style.display = "block";
 }
-// Close the reservations modal when clicking on <span> (x)
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById("reservations").style.display = "none";
-});
-// Close the reservations modal when clicking outside of it
-window.onclick = function(event) {
-    if (event.target == document.getElementById("reservations")) {
-        document.getElementById("reservations").style.display = "none";
-    }
-};
- // GET the invoices modal
+
+// GET the invoices modal
 function invoices(){
-    document.getElementById("invoices").style.display = "block";
+    document.getElementById("invoicesModal").style.display = "block";
 }
-// Close the invoices modal when clicking on <span> (x)
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById("invoices").style.display = "none";
-});
-// Close the invoices modal when clicking outside of it
-window.onclick = function(event) {
-    if (event.target == document.getElementById("invoices")) {
-        document.getElementById("invoices").style.display = "none";
-    }
-};
-// GET the about modal
-function about(){
-    document.getElementById("about").style.display = "block";
-}
-// Close the about modal when clicking on <span> (x)
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById("about").style.display = "none";
-});
-// Close the about modal when clicking outside of it
-window.onclick = function(event) {
-    if (event.target == document.getElementById("about")) {
-        document.getElementById("about").style.display = "none";
-    }
-};
+
 // GET the contact modal
 function contact(){
-    document.getElementById("contact").style.display = "block";
+    document.getElementById("contactModal").style.display = "block";
 }
-// Close the contact modal when clicking on <span> (x)
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById("contact").style.display = "none";
-});
-// Close the contact modal when clicking outside of it
-window.onclick = function(event) {
-    if (event.target == document.getElementById("contact")) {
-        document.getElementById("contact").style.display = "none";
-    }
-};
