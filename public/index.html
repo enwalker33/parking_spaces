@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parking Spaces</title>
     <link rel="stylesheet" href="styles/styles.css">
-
 </head>
 
 <body>
@@ -14,99 +13,123 @@
         <h1>Parking Spaces</h1>
         <nav class="nav-bar">
             <ul>
-                <li><button class="tab-button" onclick="showTab('availability')">Availability</button></li>
-                <li><button class="tab-button" onclick="showTab('reservations')">Reservations</button></li>
-                <li><button class="tab-button" onclick="showTab('invoices')">Invoices</button></li>
-                <li><button class="tab-button" onclick="showTab('about')">About</button></li>
-                <li><button class="tab-button" onclick="showTab('contact')">Contact</button></li>
-                
+                <li><button class="tab-button" onclick="availableSpots()">Availability</button></li>
+                <li><button class="tab-button" onclick="reservations()">Reservations</button></li>
+                <li><button class="tab-button" onclick="invoices()">Invoices</button></li>
+                <li><button class="tab-button" onclick="about()">About</button></li>
+                <li><button class="tab-button" onclick="contact()">Contact</button></li>
                 <li><button class="tab-button" onclick="loginModal()">Login</button></li>
                 <li><button class="tab-button" onclick="signupModal()">Sign Up</button></li>
-        
             </ul>
-        </nav> <br>
+        </nav>
     </header>
-    <main>
-        <!-- Modal Structure -->
-        <div id="loginModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Login to Your Account</h2>
-                <form id="login-form" action="/login" method="POST">
-                    <div class="input-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="Enter your email" />
-                    </div>
-                    <div class="input-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required placeholder="Enter your password" />
-                        <span class="show-password" id="toggle-password">Show</span>
-                    </div>
-                    <button type="submit">Login</button>
-                </form>
-            </div>
+
+    <!-- Modal Structure -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form id="login-form" action="/login" method="POST">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email" />
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password" />
+                    <span class="show-password" id="toggle-password">Show</span>
+                </div>
+                <button type="submit">Login</button>
+            </form>
         </div>
-        <!-- Sign Up modal-->
-        <div id="signupModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Sign Up for an Account</h2>
-                <form id="signUp-form" action="/signup" method="POST">
-                    <div class="input-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your name" />
-                    </div>
-                    <div class="input-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="Enter your email" />
-                    </div>
-                    <div class="input-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required placeholder="Enter your password" />
-                        <span class="show-password" id="toggle-password">Show</span>
-                    </div>
-                    <button type="submit">Sign Up</button>
-                </form>
-            </div>
-        
-    </main>
     </div>
 
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign Up for an Account</h2>
+            <form id="signUp-form" action="/signup" method="POST">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name" />
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email" />
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password" />
+                    <span class="show-password" id="toggle-password">Show</span>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
 
-    <main>
-        <section class="parking-lot">
-            <h2>Welcome to Parking Spaces</h2>
-            <p>Find and reserve parking spaces easily.</p>
-
-            <div id="parking-info">
-                <h3> Available Spots: <span id="available-spots" 0></span></h3>
+    <section class="parking-lot">
+        <h2>Welcome to Parking Spaces</h2>
+        <p>Find and reserve parking spaces easily.</p>
+        <!-- Availability Modal -->
+        <div id="availabilityModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Parking Space Availability</h2>
+                <div id="availability-info">
+                    <div id="parking-map">
+                        <!--dynamic parking lot map/visualization-->
+                        <div id="googleMap" style="width:100%;height:400px;"></div>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+                    </div>
+                </div>
             </div>
-            <div id="parking-map">
-                <!--dynamic parking lot map/visualization-->
-                <div id="googleMap" style="width:100%;height:400px;"></div>
-                <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+        </div>
+        <!-- Reservations Modal -->
+        <div id="reservationsModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>My Reservations</h2>
+                <div id="reservations-info">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Duration</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamic reservation rows will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div id="availability" class="tab-content">
-                <h2>Availability</h2>
-                <p>Here you can view the availability of rooms, dates, or products.</p>
-                <!-- Content for Availability -->
+        </div>
+        <!-- Invoices Modal -->
+        <div id="invoicesModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>My Invoices</h2>
+                <div id="invoices-info">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamic invoice rows will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
-    
-            <div id="reservations" class="tab-content">
-                <h2>Reservations</h2>
-                <p>Manage and view all your reservations here.</p>
-                <!-- Content for Reservations -->
-            </div>
-    
-            <div id="invoices" class="tab-content">
-                <h2>Invoices</h2>
-                <p>View and manage your invoices.</p>
-                <!-- Content for Invoices -->
-            </div>
-            <div id="parking-info">
-                <h3> My reservations: <span id="my-reservations" 0></span></h3>
-            </div>
-        </section>
+        </div>
         <section id="invoice-history">
             <h3>Invoice History</h3>
             <table>
@@ -117,32 +140,32 @@
                         <th>Status</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- Dynamic invoice rows will be inserted here -->
-                </tbody>
             </table>
         </section>
         <section id="about">
             <h2>About Us</h2>
             <p>We provide a platform to find and reserve parking spaces in your city.</p>
         </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
-    </main>
+        <!-- Contact Us Modal -->
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Contact Us</h2>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
     <footer>
         <p>&copy; 2023 Parking Spaces. All rights reserved.</p>
     </footer>
+    <script src="js/script.js"></script>
 </body>
-<script src="js/script.js"></script>
-
 </html>
