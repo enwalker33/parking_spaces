@@ -1,4 +1,4 @@
-/* index page*/
+/* index page */
 .header {
     background-color: #333;
     color: #fff;
@@ -7,19 +7,22 @@
     border-style: solid;
 }
 
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    color: #fff;
+}
+
 .nav-bar ul {
     display: flex;
     list-style-type: none;
-    margin: 10;
-    padding: 10;
-    background-color: #333;
-    color: #fff;
-
+    margin: 0;
+    padding: 0;
 }
 
 .nav-bar li {
     margin: 0 5px;
-    float: left;
     display: inline-flex;
     padding: 8px;
 }
@@ -49,8 +52,8 @@
 .parking-lot .space.available {
     background-color: #ccffcc;
 }
-/*login modal*/
-/* login page */
+
+/* login modal */
 .modal {
     display: none; 
     position: fixed; 
@@ -62,72 +65,80 @@
     overflow: auto; 
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
-  }
-  .modal-content {
+}
+
+.modal-content {
     background-color: #fefefe;
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 80%; 
-  }
-  
-  .close {
+}
+
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
-  .input-group {
-    margin-bottom: 15px;
-  }
+}
 
-  label {
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
     display: block;
     font-size: 14px;
     margin-bottom: 5px;
-  }
-  input {
+}
+
+input {
     width: 100%;
     padding: 10px;
     font-size: 14px;
     border-radius: 5px;
     border: 1px solid #ddd;
-  }
-  .show-password {
+}
+
+.show-password {
     font-size: 12px;
     cursor: pointer;
     color: #007BFF;
-  }
-  .form-actions {
+}
+
+.form-actions {
     text-align: center;
-  }
-  .form-actions button {
+}
+
+.form-actions button {
     width: 100%;
     padding: 10px;
     background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
-  }
-  .forgot-password-link {
+}
+
+.forgot-password-link {
     display: block;
     margin-top: 10px;
     text-align: center;
     font-size: 12px;
     color: #007BFF;
-  }
-  .error-message {
+}
+
+.error-message {
     background: #f8d7da;
     color: #721c24;
     padding: 10px;
     margin-top: 20px;
     border-radius: 5px;
     font-size: 14px;
-  }
+}
