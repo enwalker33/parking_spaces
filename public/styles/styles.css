@@ -1,4 +1,29 @@
 /* index page */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header, .nav-bar, .parking-lot, .footer {
+    flex: 1;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-style: solid;
+    margin-top: auto;
+}
+
 .header {
     background-color: #333;
     color: #fff;
