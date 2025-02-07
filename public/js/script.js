@@ -26,3 +26,33 @@ function myMap() {
         });
     });
 }
+// Get the login modal
+function loginModal(){
+    document.getElementById("loginModal").style.display = "block";
+
+}
+// Show and hide the password on login page
+document.getElementById('toggle-password').addEventListener('click', function() {
+    const passwordField = document.getElementById('password');
+    if (passwordField.type === 'password') {
+      passwordField.type = 'text';
+      this.textContent = 'Hide';
+    } else {
+      passwordField.type = 'password';
+      this.textContent = 'Show';
+    }
+  });
+
+// Close the modal when clicking on <span> (x)
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById("loginModal").style.display = "none";
+});
+
+// Close the modal when clicking outside of it
+window.onclick = function(event) {
+    if (event.target == document.getElementById("loginModal")) {
+        document.getElementById("loginModal").style.display = "none";
+    }
+};
+
+

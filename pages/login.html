@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="login.css">
+</head>
 <!-- Login Page -->
 <div class="login-container">
     <h2>Login to Your Account</h2>
@@ -13,11 +18,7 @@
         <span class="show-password" id="toggle-password">Show</span>
       </div>
   
-      <div class="form-actions">
-        <button type="submit">Login</button>
-        <a href="/forgot-password" class="forgot-password-link">Forgot Password?</a>
-        <p>Don't have an account? <a href="/signUp">Sign up here</a></p>
-      </div>
+     
     </form>
   
     <!-- Error Message (will be shown if login fails) -->
@@ -26,74 +27,7 @@
     </div>
   </div>
   
-  <!-- Optional: Link for showing/hiding password -->
-  <script>
-    document.getElementById('toggle-password').addEventListener('click', function() {
-      const passwordField = document.getElementById('password');
-      if (passwordField.type === 'password') {
-        passwordField.type = 'text';
-        this.textContent = 'Hide';
-      } else {
-        passwordField.type = 'password';
-        this.textContent = 'Show';
-      }
-    });
-  </script>
+  <script src="public/js/login.js"></script>
+
+</html>
   
-  <!-- Basic CSS for layout -->
-  <style>
-    .login-container {
-      width: 300px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #f9f9f9;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .input-group {
-      margin-bottom: 15px;
-    }
-    label {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 5px;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      font-size: 14px;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-    }
-    .show-password {
-      font-size: 12px;
-      cursor: pointer;
-      color: #007BFF;
-    }
-    .form-actions {
-      text-align: center;
-    }
-    .form-actions button {
-      width: 100%;
-      padding: 10px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-    }
-    .forgot-password-link {
-      display: block;
-      margin-top: 10px;
-      text-align: center;
-      font-size: 12px;
-      color: #007BFF;
-    }
-    .error-message {
-      background: #f8d7da;
-      color: #721c24;
-      padding: 10px;
-      margin-top: 20px;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-  </style>
